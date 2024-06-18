@@ -4,12 +4,12 @@ import PlayerCard from '../PlayerCard/PlayerCard';
 import './DraftBoard.css';
 
 const DraftBoard: React.FC = () => {
-    const { players } = useDraft();
+    const { players, team } = useDraft();
 
     return (
         <div className="draft-board">
-            {players.map(player => (
-                <PlayerCard key={player.id} player={player} />
+            {team.map(character => (
+                <PlayerCard character={character} />
             ))}
         </div>
     );
