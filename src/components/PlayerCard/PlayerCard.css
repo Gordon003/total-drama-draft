@@ -1,5 +1,16 @@
 .player-card {
-    width: 200px;
-    height: 100px;
-    background-color: blue;
+    width: 100%;
+    padding-top: 50%;
+    /* This creates a 2:1 aspect ratio (width:height) */
+    background-color:aquamarine;
+    /* You can change the color if you want */
+    position: relative;
+    /* Required for the absolutely positioned inner content */
+}
+
+.player-card::after {
+    content: '';
+    display: block;
+    padding-top: 50%;
+    /* Maintain the aspect ratio */
 }

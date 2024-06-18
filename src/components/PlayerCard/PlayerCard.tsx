@@ -9,9 +9,7 @@ interface PlayerCardProps {
 const PlayerCard: React.FC<PlayerCardProps> = ({ player }) => {
     return (
         <div className="player-card">
-            <img src={player.image} alt={player.name} />
-            <h3>{player.name}</h3>
-            <p>{player.description}</p>
+            <p> test </p>
         </div>
     );
 };
