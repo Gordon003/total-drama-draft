@@ -1,0 +1,36 @@
+import React, { createContext, useState, ReactNode, useContext } from 'react';
+import { Player } from '../models/Player';
+import mockPlayers from '../mocks/mockPlayers';
+
+interface DraftContextProps {
+    players: Player[];
+    // addPlayer: (player: Player) => void;
+}
+
+const DraftContext = createContext<DraftContextProps | undefined>(undefined);
+
+const DraftProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+    // const [players, setPlayers] = useState<Player[]>([]);
+    const [players, setPlayers] = useState<Player[]>(mockPlayers);
+
+    // const addPlayer = (player: Player) => {
+    //     setPlayers([...players, player]);
+    // };
+
+    return (
+        <DraftContext.Provider value={{players}}>
+            {children}
+        </DraftContext.Provider>
+    );
+};
+
+const useDraft = (): DraftContextProps => {
+    const context = useContext(DraftContext);
+    if (!context) {
+        throw new Error('useDraft must be used within a DraftProvider');
+    }
+    return context;
+};
+
+
+export { DraftProvider, useDraft };
