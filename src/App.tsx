@@ -9,12 +9,16 @@ function App() {
     <div className="App">
       <GameProvider>
         <BrowserRouter>
-          <Header />
+        <div className = "Header-Div"> 
+            <Header />
+        </div>
+        <div className="Main-Div"> 
           <main>
             <Routes>
               <Route path="/" element={<DraftPage/>} />
             </Routes>
           </main>
+          </div>
         </BrowserRouter>
       </GameProvider>
     </div>

@@ -1,3 +1,5 @@
-.header {
-    height: 10vh;
+.header{
+    z-index: 99 !important;
+    width: 100%;
+    background-color: darkblue;
 }

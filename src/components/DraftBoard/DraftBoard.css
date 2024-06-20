@@ -1,12 +1,30 @@
-.draft-board {
+.draft-board{
+    height: 100%;
+}
+
+.draft-board-div{
+    display: flex;
+    justify-content: center;
+    background-color: chartreuse;
+    height: 100%;
+}
+
+.team-board {
     display: grid;
-    grid-template-columns: repeat(4, 22vw);
-    grid-gap: 4vw;
-    background-color: chocolate;
-    width: 100%;
-    max-width: 100vw;
-    height: 40vw;
-    /* max-height: 100vh; */
-    margin: auto;
+    grid-template-columns: repeat(4, 22%);
+    margin: 0 auto;
+    grid-gap: 4%;
+    width: 90%;
+    height: 90%;
+    text-align: center;
     box-sizing: border-box;
+    background-color: blueviolet;
+}
+
+.draft-board-table{
+    width: 90%;
+    height: 100%;
+    border-collapse: collapse;
+    background-color:aqua;
+    align-self: center;
 }

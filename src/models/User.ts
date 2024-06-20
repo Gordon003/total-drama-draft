@@ -1,6 +1,9 @@
-export interface Player {
-    id: number;
-    name: string;
-    description: string;
-    image: string;
+import {Character} from './Character'
+
+export interface User {
+    id: string;
+    username: string;
+    teamname: string;
+    leader: Character;
+    team: Character[];
 }

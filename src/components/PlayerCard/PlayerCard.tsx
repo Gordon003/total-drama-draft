@@ -14,7 +14,7 @@ const PlayerCard: React.FC<PlayerCardProps> = ({ character }) => {
     console.log("here", imgSrc)
     return (
         <div className="player-card">
-            <img src={imgSrc} />
+            <img src={imgSrc} style={{maxWidth: '100%'}}/>
             <h2> {characterBase?.name} {character.overallRating} </h2>
             <table width='100%'>
                 <tbody>

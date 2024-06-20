@@ -5,8 +5,12 @@ import charactersBaseList from '../assets/data/charactersBaseList';
 import { CharacterBase } from '../models/CharacterBase';
 
 
-const findCharacterById = (id: string): Character | undefined => {
-    return charactersList.find(player => player.id === id);
+const findCharacterById = (id: string): Character => {
+    var char = charactersList.find(player => player.id === id)
+    if (typeof char === 'undefined') {
+        throw new Error('unable to load character');
+    }
+    return char
 };
 
 const findCharactersByIds = (ids: string[]): Character[] => {
