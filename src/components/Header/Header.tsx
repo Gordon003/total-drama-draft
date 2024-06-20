@@ -4,9 +4,9 @@ import './Header.css';
 
 const Header: React.FC = () => {
     return (
-        <header className="header">
+        <div className="header">
             <h1>Total Drama Draft Game</h1>
-        </header>
+        </div>
     );
 };
 
