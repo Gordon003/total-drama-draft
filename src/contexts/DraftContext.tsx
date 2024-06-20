@@ -1,11 +1,12 @@
 import React, { createContext, useState, ReactNode, useContext } from 'react';
 import mockUser from '../mocks/mockUser';
 import { findCharactersByIds } from '../utils/getCharacter'
+import mockDraftTeam from 'mocks/mockDraftTeam';
 import { Character } from 'models/Character';
 
 interface DraftContextProps {
-    team: Character[];
-    leader: Character;
+    team: (Character|undefined)[];
+    leader: Character|undefined;
     // addPlayer: (player: Player) => void;
 }
 
@@ -13,8 +14,8 @@ const DraftContext = createContext<DraftContextProps | undefined>(undefined);
 
 const DraftProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
 
-    const [leader, setLeader] = useState<Character>(mockUser.leader);
-    const [team, setTeam] = useState<Character[]>(mockUser.team);
+    const [leader, setLeader] = useState(undefined);
+    const [team, setTeam] = useState(findCharactersByIds(mockDraftTeam));
 
     // const addPlayer = (player: Player) => {
     //     setPlayers([...players, player]);
