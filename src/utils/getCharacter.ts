@@ -10,7 +10,16 @@ const findCharacterById = (id: string): Character | undefined => {
 };
 
 const findCharactersByIds = (ids: string[]): Character[] => {
-    return charactersList.filter(player => ids.includes(player.id));
+    var finArr: Character[] = [];
+    ids.forEach( id => {
+        var char = charactersList.find(player => player.id === id)
+        if (typeof char === 'undefined') {
+            throw new Error('unable to load character');
+        } else {
+            finArr.push(char)
+        }
+    })
+    return finArr;
 };
 
 const findCharacterBaseById = (id: string): CharacterBase | undefined => {

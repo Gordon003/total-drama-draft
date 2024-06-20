@@ -1,5 +1,5 @@
 import React, { createContext, useState, ReactNode, useContext } from 'react';
-import { Player } from '../models/Player';
+import { Player } from '../models/User';
 import mockPlayers from '../mocks/mockPlayers';
 import mockTeam from '../mocks/mockTeam';
 import { findCharactersByIds } from '../utils/getCharacter'
@@ -21,6 +21,8 @@ const DraftProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     // const addPlayer = (player: Player) => {
     //     setPlayers([...players, player]);
     // };
+
+    console.log("here", team)
 
     return (
         <DraftContext.Provider value={{ players: players, team: team }}>
