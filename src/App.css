@@ -1,5 +1,4 @@
 .App {
-  text-align: center;
   display: flex;
     flex-direction: column;
     height: 100vh;
@@ -10,7 +9,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: blueviolet;
+    background-color:darksalmon;
 }
 
 .Main-Div {

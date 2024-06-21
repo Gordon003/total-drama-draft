@@ -23,7 +23,7 @@ const PlayerCard: React.FC<PlayerCardProps> = ({ character }) => {
                 <>
                 <img src={imgSrc} style={{ maxWidth: '100%' }} />
                 <h2> {characterBase?.name} {character.overallRating} </h2>
-                <table width='100%'>
+                <table width='80%'>
                     <tbody>
                         <tr>
                             <td>PHY: {character.overallRating}</td>
