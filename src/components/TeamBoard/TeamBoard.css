@@ -1,0 +1,30 @@
+.team-board {
+    height: 100%;
+}
+
+.team-board-div {
+    display: flex;
+    justify-content: center;
+    background-color: chartreuse;
+    height: 100%;
+}
+
+.character-board {
+    display: grid;
+    grid-template-columns: repeat(4, 22%);
+    margin: 0 auto;
+    grid-gap: 4%;
+    width: 90%;
+    height: 90%;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: blueviolet;
+}
+
+.team-board-table {
+    width: 90%;
+    height: 100%;
+    border-collapse: collapse;
+    background-color: aqua;
+    align-self: center;
+}

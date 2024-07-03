@@ -1,4 +1,5 @@
 import DraftBoard from 'components/DraftBoard/DraftBoard';
+import TeamBoard from 'components/TeamBoard/TeamBoard';
 import { DraftProvider } from 'contexts/DraftContext';
 import React from 'react';
 import './DraftPage.css';
@@ -17,7 +18,7 @@ const DraftPage: React.FC = () => {
             <DraftProvider>
                 <div className="draft-page">
                 {/* <button onClick={handleAddPlayer}>Add Player</button> */}
-                <DraftBoard />
+                <TeamBoard />
                 </div>
             </DraftProvider>
         </React.StrictMode>
