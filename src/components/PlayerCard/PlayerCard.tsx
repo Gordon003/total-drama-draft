@@ -5,10 +5,12 @@ import { findCharacterBaseById } from 'utils/getCharacter';
 import './PlayerCard.css';
 
 interface PlayerCardProps {
-    character: Character | undefined;
+    character: Character;
+    handleClick: (character: Character, index: number) => void;
+    index: number;
 }
 
-const PlayerCard: React.FC<PlayerCardProps> = ({ character }) => {
+const PlayerCard: React.FC<PlayerCardProps> = ({ character, handleClick, index }) => {
     let characterBase: CharacterBase|undefined;
     let imgSrc: string = "";
     
@@ -18,7 +20,7 @@ const PlayerCard: React.FC<PlayerCardProps> = ({ character }) => {
     }
 
     return (
-        <div className="player-card">
+        <div className="player-card" onClick={() => handleClick(character, index)}>
             {characterBase && character && (
                 <>
                 <img src={imgSrc} style={{ maxWidth: '100%' }} />

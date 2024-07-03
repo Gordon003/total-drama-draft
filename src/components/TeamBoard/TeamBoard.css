@@ -1,12 +1,21 @@
 .team-board {
     height: 100%;
+    width: 100%;
+}
+
+.draft-board-div {
+    position: absolute;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
 }
 
 .team-board-div {
     display: flex;
     justify-content: center;
-    background-color: chartreuse;
+    background-color: rgb(77, 123, 30);
     height: 100%;
+    width: 100%;
 }
 
 .character-board {
@@ -22,6 +31,7 @@
 }
 
 .team-board-table {
+    position: relative;
     width: 90%;
     height: 100%;
     border-collapse: collapse;

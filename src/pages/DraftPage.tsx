@@ -1,11 +1,11 @@
 import DraftBoard from 'components/DraftBoard/DraftBoard';
 import TeamBoard from 'components/TeamBoard/TeamBoard';
 import { DraftProvider } from 'contexts/DraftContext';
-import React from 'react';
+import React, { useContext } from 'react';
+import { useDraft } from '../contexts/DraftContext';
 import './DraftPage.css';
 
 const DraftPage: React.FC = () => {
-    // const { addPlayer } = useContext(DraftContext);
 
     // const handleAddPlayer = () => {
         // Example function to add a player, replace with actual logic
@@ -18,7 +18,7 @@ const DraftPage: React.FC = () => {
             <DraftProvider>
                 <div className="draft-page">
                 {/* <button onClick={handleAddPlayer}>Add Player</button> */}
-                <TeamBoard />
+                    <TeamBoard/>
                 </div>
             </DraftProvider>
         </React.StrictMode>

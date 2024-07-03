@@ -1,37 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDraft } from '../../contexts/DraftContext';
 import PlayerCard from '../PlayerCard/PlayerCard';
 import PlayerEmptyCard from 'components/PlayerCard/PlayerEmptyCard';
 import './DraftBoard.css';
+import { Character } from 'models/Character';
+import mockDraft from 'mocks/mockDraft';
+import { findCharactersByIds } from 'utils/getCharacter';
 
-const DraftBoard: React.FC = () => {
-    const { leader, team } = useDraft();
+interface DraftBoardProps {
+}
+
+const DraftBoard: React.FC<DraftBoardProps> = () => {
+    const { addPlayer, SETDRAFTTIME} = useDraft();
+
+    const [team, setTeam] = useState(findCharactersByIds(mockDraft) as Character[]);
+
+    const handleClick = (character: Character, index: number): void => {
+        console.log("hereww")
+        console.log("character", character, index)
+        addPlayer(character, index);
+        SETDRAFTTIME(false);
+    }
 
     return (
         <div className="draft-board">
-            <div className="draft-board-div">
-                <table className="draft-board-table">
-                    <tbody>
-                        <tr>
-                            <td style={{width: '20%', backgroundColor: 'blue'}}>
-                                {leader && <PlayerCard character={leader} />}
-                                {typeof leader === 'undefined' && <PlayerEmptyCard />}
-                            </td>
-                            <td style={{ width: '80%', backgroundColor: 'red'}}>
-                                <div className="team-board">
-                                    {team.map(function (character, i) {
-                                        if (typeof character === 'undefined') {
-                                            return < PlayerEmptyCard />
-                                        } else {
-                                            return < PlayerCard character={character} />
-                                        }
-                                    })}
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <h1> Choose your contestant! </h1>
+            <table className="draft-board-table">
+                <tr>
+                    {team.map(function (character, i) {
+                        return <td className='draft-board-table-card'>< PlayerCard key={i} character={character} handleClick={handleClick} index={i}/> </td>
+                    })}
+                </tr>
+            </table>
         </div>
     );
 };
