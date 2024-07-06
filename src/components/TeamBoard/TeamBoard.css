@@ -24,10 +24,10 @@
     margin: 0 auto;
     grid-gap: 4%;
     width: 90%;
-    height: 90%;
+    height: 80%;
     text-align: center;
     box-sizing: border-box;
-    background-color: blueviolet;
+    background-color: rgb(131, 36, 221);
 }
 
 .team-board-table {
@@ -37,4 +37,8 @@
     border-collapse: collapse;
     background-color: aqua;
     align-self: center;
+}
+
+.team-board-table td {
+    height: 100%;
 }

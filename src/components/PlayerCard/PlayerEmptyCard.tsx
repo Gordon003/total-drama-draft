@@ -1,7 +1,5 @@
 import React from 'react';
 import './PlayerCard.css';
-import { Character } from 'models/Character';
-
 interface PlayerEmptyCardProps {
     // character: Character | undefined;
     index: number;
@@ -11,9 +9,9 @@ interface PlayerEmptyCardProps {
 const PlayerEmptyCard: React.FC<PlayerEmptyCardProps> = ({ index, showDraftButtonOnClick }) => {
 
     return (
-        <div className="player-card" style={{ backgroundColor: 'yellow' }}>
-            <div key={index} onClick={() => showDraftButtonOnClick(index)}>
-                <p> Empty </p>
+        <div className="player-card-div">
+            <div className="player-card" onClick={() => showDraftButtonOnClick(index)}>
+                <p> ts </p>
             </div>
         </div>
     );

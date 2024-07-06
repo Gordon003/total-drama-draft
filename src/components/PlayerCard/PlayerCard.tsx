@@ -11,22 +11,20 @@ interface PlayerCardProps {
 }
 
 const PlayerCard: React.FC<PlayerCardProps> = ({ character, handleClick, index }) => {
-    let characterBase: CharacterBase|undefined;
+    let characterBase: CharacterBase;
     let imgSrc: string = "";
     
-    if (typeof character !== "undefined"){
-        characterBase = findCharacterBaseById(character.characterBaseId);
-        imgSrc = `/images/charicon/${characterBase?.image}`;
-    }
+    characterBase = findCharacterBaseById(character.characterBaseId) as CharacterBase;
+    imgSrc = `/images/charicon/${characterBase?.image}`;
 
     return (
-        <div className="player-card" onClick={() => handleClick(character, index)}>
-            {characterBase && character && (
-                <>
-                <img src={imgSrc} style={{ maxWidth: '100%' }} />
-                <h2> {characterBase?.name} {character.overallRating} </h2>
-                <table width='80%'>
-                    <tbody>
+        <div className="player-card-div">
+            <div className="player-card" onClick={() => handleClick(character, index)}>
+                <img src={imgSrc} style={{ maxWidth: '100%', height: '40%', backgroundColor: 'blue' }} />
+                <p style={{backgroundColor: 'purple'}}> {characterBase?.name} {character.overallRating} </p>
+                <div className='player-card-table-div'>
+                    <table className="player-card-table" style={{ backgroundColor: 'red' }}>
+                        <tbody>
                         <tr>
                             <td>PHY: {character.overallRating}</td>
                             <td>TEAM: {character.teamworkRating}</td>
@@ -39,10 +37,10 @@ const PlayerCard: React.FC<PlayerCardProps> = ({ character, handleClick, index }
                             <td>DET: {character.determinationRating}</td>
                             <td>POP: {character.popularityRating}</td>
                         </tr>
-                    </tbody>
-                </table>
-                </>
-            )}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     );
 };

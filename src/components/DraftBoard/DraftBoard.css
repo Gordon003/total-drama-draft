@@ -1,11 +1,11 @@
 .draft-board{
     height: 80%;
     width: 80%;
-    background-color: rgb(162, 87, 87);
+    background-color: rgb(216, 116, 116);
     /* opacity: 50%; */
     margin: auto;
     text-align: center;
-    margin-top: 5%;
+    /* margin-top: 10%; */
 }
 
 .draft-board-table{
