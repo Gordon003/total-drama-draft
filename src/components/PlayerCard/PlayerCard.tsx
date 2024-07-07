@@ -20,10 +20,10 @@ const PlayerCard: React.FC<PlayerCardProps> = ({ character, handleClick, index }
     return (
         <div className="player-card-div">
             <div className="player-card" onClick={() => handleClick(character, index)}>
-                <img src={imgSrc} style={{ maxWidth: '100%', height: '40%', backgroundColor: 'blue' }} />
-                <p style={{backgroundColor: 'purple'}}> {characterBase?.name} {character.overallRating} </p>
+                <img src={imgSrc} style={{ maxWidth: '100%', height: '40%' }} />
+                <h3> {characterBase?.name} {character.overallRating} </h3>
                 <div className='player-card-table-div'>
-                    <table className="player-card-table" style={{ backgroundColor: 'red' }}>
+                    <table className="player-card-table">
                         <tbody>
                         <tr>
                             <td>PHY: {character.overallRating}</td>

@@ -7,12 +7,6 @@ import './DraftPage.css';
 
 const DraftPage: React.FC = () => {
 
-    // const handleAddPlayer = () => {
-        // Example function to add a player, replace with actual logic
-        // const newPlayer = { id: 1, name: 'New Player', description: 'A new player', image: 'path/to/image.jpg' };
-        // addPlayer(newPlayer);
-    // };
-
     return (
         <React.StrictMode>
             <DraftProvider>
@@ -23,6 +17,7 @@ const DraftPage: React.FC = () => {
             </DraftProvider>
         </React.StrictMode>
     );
+    
 };
 
 export default DraftPage;
