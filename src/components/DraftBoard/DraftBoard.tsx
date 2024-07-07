@@ -6,6 +6,7 @@ import './DraftBoard.css';
 import { Character } from 'models/Character';
 import mockDraft from 'mocks/mockDraft';
 import { findCharactersByIds } from 'utils/getCharacter';
+import { generateDraft } from 'utils/generateDraft';
 
 interface DraftBoardProps {
 }
@@ -13,7 +14,7 @@ interface DraftBoardProps {
 const DraftBoard: React.FC<DraftBoardProps> = () => {
     const { addPlayer, SETDRAFTTIME} = useDraft();
 
-    const [team, setTeam] = useState(findCharactersByIds(mockDraft) as Character[]);
+    const [team, setTeam] = useState(findCharactersByIds(generateDraft()) as Character[]);
 
     const handleClick = (character: Character, index: number): void => {
         console.log("hereww")

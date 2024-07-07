@@ -1,6 +1,33 @@
 import { CharacterBase } from '../../models/CharacterBase';
 
-const charactersBaseList: CharacterBase[] = [
+export const charactersBaseList: CharacterBase[] = [
+    {
+        id: "cody",
+        name: "Cody",
+        like: [],
+        dislike: [],
+        gender: "male",
+        image: "cody.png",
+        description: "Cody"
+    },
+    {
+        id: "courtney",
+        name: "Courtney",
+        like: [],
+        dislike: [],
+        gender: "female",
+        image: "courtney.png",
+        description: "Courtney"
+    },
+    {
+        id: "dawn",
+        name: "Dawn",
+        like: [],
+        dislike: [],
+        gender: "female",
+        image: "dawn.png",
+        description: "Cody"
+    },
     {
         id: "heather",
         name: "Heather",
@@ -11,14 +38,21 @@ const charactersBaseList: CharacterBase[] = [
         description: "Heather is a tough women"
     },
     {
-        id: "duncan",
-        name: "Duncan",
+        id: "noah",
+        name: "Noah",
         like: [],
-        dislike: ["heather"],
+        dislike: [],
         gender: "male",
-        image: "heather.png",
-        description: "Duncan is a tough men"
+        image: "noah.png",
+        description: "Noah"
+    },
+    {
+        id: "tyler",
+        name: "Tyler",
+        like: [],
+        dislike: [],
+        gender: "male",
+        image: "tyler.png",
+        description: "Tyler"
     }
 ];
-
-export default charactersBaseList;

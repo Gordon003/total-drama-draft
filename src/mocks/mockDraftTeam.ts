@@ -1,11 +1,11 @@
 const mockDraftTeam: string[] = [
-    "heather001",
+    "noah001",
     "",
-    "heather001",
-    "heather001",
-    "heather001",
     "",
-    "heather001",
+    "cody001",
+    "",
+    "",
+    "courtney001",
     "heather001"
 ];
 

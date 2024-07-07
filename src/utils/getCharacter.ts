@@ -1,7 +1,7 @@
-import charactersList from '../assets/data/characterList';
+import { charactersList } from '../assets/data/characterList';
 import { Character } from '../models/Character';
 
-import charactersBaseList from '../assets/data/charactersBaseList';
+import { charactersBaseList } from '../assets/data/charactersBaseList';
 import { CharacterBase } from '../models/CharacterBase';
 
 

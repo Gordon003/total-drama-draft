@@ -3,7 +3,7 @@ export interface CharacterBase {
     name: string;
     like: number[];
     dislike: string[];
-    gender: string;
+    gender: 'male'|'female';
     image: string;
     description: string;
     special?: string;
