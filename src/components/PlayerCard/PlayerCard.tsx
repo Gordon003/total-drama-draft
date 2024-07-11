@@ -5,9 +5,9 @@ import { findCharacterBaseById } from 'utils/getCharacter';
 import './PlayerCard.css';
 
 interface PlayerCardProps {
-    character: Character;
-    handleClick: (character: Character, index: number) => void;
-    index: number;
+    character: Character
+    handleClick: (index: number) => void
+    index: number
 }
 
 const PlayerCard: React.FC<PlayerCardProps> = ({ character, handleClick, index }) => {
@@ -19,7 +19,7 @@ const PlayerCard: React.FC<PlayerCardProps> = ({ character, handleClick, index }
 
     return (
         <div className="player-card-div">
-            <div className="player-card" onClick={() => handleClick(character, index)}>
+            <div className="player-card" onClick={() => handleClick(index)}>
                 <img src={imgSrc} style={{ maxWidth: '100%', height: '40%' }} />
                 <h3> {characterBase?.name} {character.overallRating} </h3>
                 <div className='player-card-table-div'>

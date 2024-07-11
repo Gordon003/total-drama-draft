@@ -1,34 +1,29 @@
-import React, { useState } from 'react';
-import { useDraft } from '../../contexts/DraftContext';
+import React, { useContext } from 'react';
+import { useDraftContext } from '../../contexts/DraftContext';
 import PlayerCard from '../PlayerCard/PlayerCard';
 import PlayerEmptyCard from 'components/PlayerCard/PlayerEmptyCard';
 import './TeamBoard.css';
 import DraftBoard from 'components/DraftBoard/DraftBoard';
+import { findCharactersByIds } from 'utils/getCharacter';
 
 interface TeamBoardProps {
+    handlePlayerSelect: (index: number) => void
+    handleEmptySelect:  (index: number) => void
+    inputTeam: string[]
 }
 
 
-const TeamBoard: React.FC<TeamBoardProps> = (addPlayer) => {
-    const { leader, team, DRAFTTIME, SETDRAFTTIME, setCardIndex} = useDraft();
-
+const TeamBoard: React.FC<TeamBoardProps> = ({handlePlayerSelect, handleEmptySelect, inputTeam}) => {
+    
     const divStyle = {
         backgroundImage: `url(${process.env.PUBLIC_URL}/images/background/background001.jpg)`,
         backgroundRpeat: 'no-repeat'
     }
 
-    const showDraftButtonClick = (index: number) => {
-        SETDRAFTTIME(true);
-        setCardIndex(index);
-    }
+    const team = findCharactersByIds(inputTeam);
 
     return (
         <div className="team-board" style={divStyle}>
-            {DRAFTTIME === true &&
-                <div className="draft-board-div">
-                    <DraftBoard/>
-                </div>
-            }
             <div className="team-board-div">
                 <table className="team-board-table">
                     <tr>
@@ -40,9 +35,9 @@ const TeamBoard: React.FC<TeamBoardProps> = (addPlayer) => {
                             <div className="character-board" style={{ border:'10px solid rgb(131, 76, 14, 0.8)'}}>
                                 {team.map(function (character, i) {
                                     if (typeof character === 'undefined') {
-                                        return < PlayerEmptyCard index={i} showDraftButtonOnClick={showDraftButtonClick} />
+                                        return <div> < PlayerEmptyCard key={i} index={i} handleClick={handleEmptySelect} /> </div>
                                     } else {
-                                        return < PlayerCard character={character} handleClick={(char, ind) => console.log("here")} index={0} />
+                                        return <div> < PlayerCard key={i} character={character} index={i} handleClick={handlePlayerSelect} /> </div>
                                     }
                                 })}
                             </div>

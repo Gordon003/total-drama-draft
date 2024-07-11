@@ -1,21 +1,30 @@
 import DraftBoard from 'components/DraftBoard/DraftBoard';
 import TeamBoard from 'components/TeamBoard/TeamBoard';
-import { DraftProvider } from 'contexts/DraftContext';
-import React, { useContext } from 'react';
-import { useDraft } from '../contexts/DraftContext';
+import { useDraftContext } from 'contexts/DraftContext';
+import React from 'react';
 import './DraftPage.css';
 
 const DraftPage: React.FC = () => {
 
+    const {updateState, DRAFTTIME, draftTeam} = useDraftContext();
+
+    const pickNewContestant = (index: number) => {
+        updateState({DRAFTTIME: true, cardIndex: index})
+    }
+
+    const selectContestant = (index: number) => {
+        console.log(index)
+    }
+
     return (
-        <React.StrictMode>
-            <DraftProvider>
-                <div className="draft-page">
-                {/* <button onClick={handleAddPlayer}>Add Player</button> */}
-                    <TeamBoard/>
+        <div className="draft-page">
+            {DRAFTTIME === true &&
+                <div className="draft-board-div">
+                    <DraftBoard />
                 </div>
-            </DraftProvider>
-        </React.StrictMode>
+            }
+            <TeamBoard handlePlayerSelect={selectContestant} handleEmptySelect={pickNewContestant} inputTeam={draftTeam} />
+        </div>
     );
     
 };

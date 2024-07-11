@@ -3,14 +3,18 @@ import './PlayerCard.css';
 interface PlayerEmptyCardProps {
     // character: Character | undefined;
     index: number;
-    showDraftButtonOnClick: (index: number) => void;
+    handleClick: (index: number) => void;
 }
 
-const PlayerEmptyCard: React.FC<PlayerEmptyCardProps> = ({ index, showDraftButtonOnClick }) => {
+const PlayerEmptyCard: React.FC<PlayerEmptyCardProps> = ({ index, handleClick }) => {
+
+    const handleClickFnc = () => {
+        handleClick(index)
+    }
 
     return (
         <div className="player-card-div">
-            <div className="player-card" onClick={() => showDraftButtonOnClick(index)}>
+            <div className="player-card" onClick={handleClickFnc}>
                 <p> ts </p>
             </div>
         </div>
