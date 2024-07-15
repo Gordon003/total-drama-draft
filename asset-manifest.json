@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/total-drama-draft/static/css/main.e3681985.css",
+    "main.js": "/total-drama-draft/static/js/main.b1e837d1.js",
+    "static/js/453.37f4833e.chunk.js": "/total-drama-draft/static/js/453.37f4833e.chunk.js",
+    "index.html": "/total-drama-draft/index.html",
+    "main.e3681985.css.map": "/total-drama-draft/static/css/main.e3681985.css.map",
+    "main.b1e837d1.js.map": "/total-drama-draft/static/js/main.b1e837d1.js.map",
+    "453.37f4833e.chunk.js.map": "/total-drama-draft/static/js/453.37f4833e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e3681985.css",
+    "static/js/main.b1e837d1.js"
+  ]
+}
