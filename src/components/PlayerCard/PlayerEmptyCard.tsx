@@ -15,7 +15,7 @@ const PlayerEmptyCard: React.FC<PlayerEmptyCardProps> = ({ index, handleClick })
     return (
         <div className="player-card-div">
             <div className="player-card" onClick={handleClickFnc}>
-                <p> ts </p>
+                <p> Empty </p>
             </div>
         </div>
     );

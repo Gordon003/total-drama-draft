@@ -14,19 +14,27 @@ const DraftBoard: React.FC = () => {
     // select contestant
     const handleClick = (index: number): void => {
         const character = contestantOptions[index] as Character
-        updateState({ DRAFTTIME: false, draftTeam: draftTeam.map((char, ind) => (ind === cardIndex ? character.id : char)) });
+        if (cardIndex === -1) {
+            updateState({ DRAFTTIME: false, draftLeader: character.id });
+        } else{
+            updateState({ DRAFTTIME: false, draftTeam: draftTeam.map((char, ind) => (ind === cardIndex ? character.id : char)) });            
+        }
     }
 
     return (
         <div className="draft-board">
-            <h1> Choose your contestant! </h1>
-            <table className="draft-board-table">
-                <tr>
-                    {contestantOptions.map(function (character, i) {
-                        return <td className='draft-board-table-card' key={i}>< PlayerCard key={i} character={character} handleClick={handleClick} index={i}/> </td>
-                    })}
-                </tr>
-            </table>
+            <div>
+                <h1> Choose your contestant! </h1>
+                <table className="draft-board-table">
+                    <tbody>
+                    <tr style={{height: '50%'}}>
+                        {contestantOptions.map(function (character, i) {
+                            return <td className='draft-board-table-card' key={i}>< PlayerCard key={i} character={character} handleClick={handleClick} index={i}/> </td>
+                        })}
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 };

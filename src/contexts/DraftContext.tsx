@@ -4,7 +4,7 @@ import mockDraftTeam from 'mocks/mockDraftTeam';
 
 interface DraftState {
     draftTeam: string[]
-    draftLeader: Character|undefined
+    draftLeader: string
     DRAFTTIME: boolean
     cardIndex: number
     updateState: (newState: Partial<DraftState>) => void
@@ -12,7 +12,7 @@ interface DraftState {
 
 const initialState: DraftState = {
     draftTeam: mockDraftTeam,
-    draftLeader: undefined,
+    draftLeader: '',
     DRAFTTIME: false,
     cardIndex: 0,
     updateState: () => {}

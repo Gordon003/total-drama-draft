@@ -17,29 +17,22 @@ const PlayerCard: React.FC<PlayerCardProps> = ({ character, handleClick, index }
     characterBase = findCharacterBaseById(character.characterBaseId) as CharacterBase;
     imgSrc = `/images/charicon/${characterBase?.image}`;
 
+    const charRating = character.overallRating;
+    const getBackgroundColor = (): string => {
+        if (charRating >= 75) {
+            return '#FFD700';
+        } else if (charRating >= 60) {
+            return '#C0C0C0';
+        } else {
+            return '#CD7F32';
+        }
+    };
+
     return (
-        <div className="player-card-div">
-            <div className="player-card" onClick={() => handleClick(index)}>
+        <div className="player-card-div" style={{backgroundColor: getBackgroundColor()}} onClick={() => handleClick(index)}>
+            <div>
                 <img src={imgSrc} style={{ maxWidth: '100%', height: '40%' }} />
-                <h3> {characterBase?.name} {character.overallRating} </h3>
-                <div className='player-card-table-div'>
-                    <table className="player-card-table">
-                        <tbody>
-                        <tr>
-                            <td>PHY: {character.overallRating}</td>
-                            <td>TEAM: {character.teamworkRating}</td>
-                        </tr>
-                        <tr>
-                            <td>END: {character.enduranceRating}</td>
-                            <td>INT: {character.inteligenceRating}</td>
-                        </tr>
-                        <tr>
-                            <td>DET: {character.determinationRating}</td>
-                            <td>POP: {character.popularityRating}</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <h2> {characterBase?.name} {character.overallRating} </h2>
             </div>
         </div>
     );

@@ -6,7 +6,7 @@ import './DraftPage.css';
 
 const DraftPage: React.FC = () => {
 
-    const {updateState, DRAFTTIME, draftTeam} = useDraftContext();
+    const {updateState, DRAFTTIME, draftTeam, draftLeader} = useDraftContext();
 
     const pickNewContestant = (index: number) => {
         updateState({DRAFTTIME: true, cardIndex: index})
@@ -16,6 +16,14 @@ const DraftPage: React.FC = () => {
         console.log(index)
     }
 
+    const pickNewLeader = (index: number) => {
+        updateState({DRAFTTIME: true, cardIndex: index})
+    }
+
+    const selectLeader = (index: number) => {
+        console.log('leader')
+    }
+
     return (
         <div className="draft-page">
             {DRAFTTIME === true &&
@@ -23,7 +31,7 @@ const DraftPage: React.FC = () => {
                     <DraftBoard />
                 </div>
             }
-            <TeamBoard handlePlayerSelect={selectContestant} handleEmptySelect={pickNewContestant} inputTeam={draftTeam} />
+            <TeamBoard handlePlayerSelect={selectContestant} handlePlayerEmptySelect={pickNewContestant} handleLeaderSelect={selectLeader} handleEmptyLeaderSelect={pickNewLeader} inputTeam={draftTeam} inputLeader={draftLeader}/>
         </div>
     );
     
