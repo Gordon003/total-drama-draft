@@ -1,7 +1,7 @@
 export interface CharacterBase {
     id: string;
     name: string;
-    like: number[];
+    like: string[];
     dislike: string[];
     gender: 'male'|'female';
     image: string;

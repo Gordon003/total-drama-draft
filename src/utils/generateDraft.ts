@@ -1,9 +1,11 @@
 
 import { charactersIDList } from '../assets/data/characterList';
 
-export const generateDraft = (): string[] => {
+export const generateDraft = (leader: string, team: string[]): string[] => {
 
-    const charList = charactersIDList();
+    let charList = charactersIDList();
+    charList = charList.filter(item => !team.includes(item))
+    charList = charList.filter(item => item !== leader);
 
     // Fisher-Yates Shuffle
     for (let i = charList.length - 1; i > 0; i--) {

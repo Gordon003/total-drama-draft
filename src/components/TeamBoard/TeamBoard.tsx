@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useDraftContext } from '../../contexts/DraftContext';
 import PlayerCard from '../PlayerCard/PlayerCard';
 import PlayerEmptyCard from 'components/PlayerCard/PlayerEmptyCard';
@@ -26,6 +26,12 @@ const TeamBoard: React.FC<TeamBoardProps> = ({ handlePlayerSelect, handlePlayerE
     const team = findCharactersByIds(inputTeam);
     const leader = findCharacterById(inputLeader);
 
+    const [inputValue, setInputValue] = useState<string>('');
+
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setInputValue(event.target.value);
+    };
+
     return (
         <div className="team-board" style={divStyle}>
             <div className="team-board-div">
@@ -42,7 +48,28 @@ const TeamBoard: React.FC<TeamBoardProps> = ({ handlePlayerSelect, handlePlayerE
                             </div>
                         </td>
                         <td style={{ width: '80%', height: '100%'}}>
-                            <h1> TEAM NAME: </h1>
+                            <div style={{ display: 'flex', alignItems: 'center' }}>
+                                <label htmlFor="name-input" style={{ fontSize: '1.5em', marginRight: '1em', backgroundColor: 'white' }}>
+                                    Team Name:    
+                                </label>
+                                <input
+                                    type="text"
+                                    value={inputValue}
+                                    onChange={handleInputChange}
+                                    placeholder="Type something..."
+                                    style={{
+                                        fontSize: '2em', // Similar to h1 size
+                                        fontWeight: 'bold',
+                                        border: 'none',
+                                        outline: 'none',
+                                        width: '80%',
+                                        boxSizing: 'border-box',
+                                    }}
+                                />
+                            </div>
+
+                            <br/>
+
                             <div className="character-board" style={{ border:'10px solid rgb(131, 76, 14, 0.8)'}}>
                                 {team.map(function (character, i) {
                                     if (typeof character === 'undefined') {

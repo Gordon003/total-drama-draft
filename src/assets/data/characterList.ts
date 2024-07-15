@@ -1,78 +1,126 @@
 import { Character } from '../../models/Character';
 
 export const charactersList: Character[] = [
-    {
-        id: "cody001",
-        characterBaseId: "cody",
-        season: "tdi",
-        overallRating: 75,
-        physicalRating: 50,
-        enduranceRating: 20,
-        determinationRating: 60,
-        teamworkRating: 50,
-        inteligenceRating: 20,
-        popularityRating: 30
-    },
-    {
-        id: "courtney001",
-        characterBaseId: "courtney",
-        season: "tdi",
-        overallRating: 90,
-        physicalRating: 30,
-        enduranceRating: 40,
-        determinationRating: 60,
-        teamworkRating: 50,
-        inteligenceRating: 30,
-        popularityRating: 50
-    },
-    {
-        id: "dawn001",
-        characterBaseId: "dawn",
-        season: "tdroti",
-        overallRating: 65,
-        physicalRating: 40,
-        enduranceRating: 30,
-        determinationRating: 40,
-        teamworkRating: 60,
-        inteligenceRating: 60,
-        popularityRating: 60
-    },
-    {
-        id: "heather001",
-        characterBaseId: "heather",
-        season: "tdi",
-        overallRating: 90,
-        physicalRating: 30,
-        enduranceRating: 40,
-        determinationRating: 60,
-        teamworkRating: 50,
-        inteligenceRating: 30,
-        popularityRating: 50
-    },
-    {
-        id: "noah001",
-        characterBaseId: "noah",
-        season: "tdi",
-        overallRating: 50,
-        physicalRating: 40,
-        enduranceRating: 40,
-        determinationRating: 60,
-        teamworkRating: 50,
-        inteligenceRating: 30,
-        popularityRating: 50
-    },
-    {
-        id: "tyler001",
-        characterBaseId: "tyler",
-        season: "tdi",
-        overallRating: 70,
-        physicalRating: 20,
-        enduranceRating: 30,
-        determinationRating: 50,
-        teamworkRating: 60,
-        inteligenceRating: 40,
-        popularityRating: 50
-    }
+        {
+            id: "beth001",
+            characterBaseId: "beth",
+            season: "tdi",
+            overallRating: 70
+        },
+        {
+            id: "bridgette002",
+            characterBaseId: "bridgette",
+            season: "tdi",
+            overallRating: 75
+        },
+        {
+            id: "cody003",
+            characterBaseId: "cody",
+            season: "tdi",
+            overallRating: 75
+        },
+        {
+            id: "courtney004",
+            characterBaseId: "courtney",
+            season: "tdi",
+            overallRating: 85
+        },
+        {
+            id: "duncan005",
+            characterBaseId: "duncan",
+            season: "tdi",
+            overallRating: 90
+        },
+        {
+            id: "eva006",
+            characterBaseId: "eva",
+            season: "tdi",
+            overallRating: 65
+        },
+        {
+            id: "ezekiel007",
+            characterBaseId: "ezekiel",
+            season: "tdi",
+            overallRating: 60
+        },
+        {
+            id: "geoff008",
+            characterBaseId: "geoff",
+            season: "tdi",
+            overallRating: 70
+        },
+        {
+            id: "gwen009",
+            characterBaseId: "gwen",
+            season: "tdi",
+            overallRating: 80
+        },
+        {
+            id: "harold010",
+            characterBaseId: "harold",
+            season: "tdi",
+            overallRating: 75
+        },
+        {
+            id: "heather011",
+            characterBaseId: "heather",
+            season: "tdi",
+            overallRating: 95
+        },
+        {
+            id: "izzy012",
+            characterBaseId: "izzy",
+            season: "tdi",
+            overallRating: 70
+        },
+        {
+            id: "justin013",
+            characterBaseId: "justin",
+            season: "tdi",
+            overallRating: 65
+        },
+        {
+            id: "katie014",
+            characterBaseId: "katie",
+            season: "tdi",
+            overallRating: 55
+        },
+        {
+            id: "lindsay015",
+            characterBaseId: "lindsay",
+            season: "tdi",
+            overallRating: 60
+        },
+        {
+            id: "noah016",
+            characterBaseId: "noah",
+            season: "tdi",
+            overallRating: 70
+        },
+        {
+            id: "owen017",
+            characterBaseId: "owen",
+            season: "tdi",
+            overallRating: 85
+        },
+        {
+            id: "sadie018",
+            characterBaseId: "sadie",
+            season: "tdi",
+            overallRating: 55
+        },
+        {
+            id: "trent019",
+            characterBaseId: "trent",
+            season: "tdi",
+            overallRating: 75
+        },
+        {
+            id: "tyler020",
+            characterBaseId: "tyler",
+            season: "tdi",
+            overallRating: 65
+        }
 ];
 
 export const charactersIDList = (): string[] => {

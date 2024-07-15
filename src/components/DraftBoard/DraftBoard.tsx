@@ -7,9 +7,9 @@ import { findCharactersByIds } from 'utils/getCharacter';
 import { generateDraft } from 'utils/generateDraft';
 
 const DraftBoard: React.FC = () => {
-    const { draftTeam, cardIndex, updateState } = useDraftContext();
+    const { draftLeader, draftTeam, cardIndex, updateState } = useDraftContext();
 
-    const [contestantOptions, _] = useState(findCharactersByIds(generateDraft()) as Character[]);
+    const [contestantOptions, _] = useState(findCharactersByIds(generateDraft(draftLeader, draftTeam)) as Character[]);
 
     // select contestant
     const handleClick = (index: number): void => {
