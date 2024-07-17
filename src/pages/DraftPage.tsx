@@ -1,6 +1,6 @@
 import DraftBoard from 'components/DraftBoard/DraftBoard';
 import TeamBoard from 'components/TeamBoard/TeamBoard';
-import { useDraftContext } from 'contexts/DraftContext';
+import { initialState, useDraftContext } from 'contexts/DraftContext';
 import React from 'react';
 import './DraftPage.css';
 
@@ -24,6 +24,18 @@ const DraftPage: React.FC = () => {
         console.log('leader')
     }
 
+    const updateDraftTeamName = (value: string) => {
+        updateState({draftTeamName: value});
+    }
+
+    const submitTeam = () => {
+        console.log("")
+    }
+
+    const restartTeam = () => {
+        updateState(initialState);
+    }
+
     return (
         <div className="draft-page">
             {DRAFTTIME === true &&
@@ -31,7 +43,17 @@ const DraftPage: React.FC = () => {
                     <DraftBoard />
                 </div>
             }
-            <TeamBoard handlePlayerSelect={selectContestant} handlePlayerEmptySelect={pickNewContestant} handleLeaderSelect={selectLeader} handleEmptyLeaderSelect={pickNewLeader} inputTeam={draftTeam} inputLeader={draftLeader}/>
+            <TeamBoard
+                handlePlayerSelect={selectContestant}
+                handlePlayerEmptySelect={pickNewContestant}
+                handleLeaderSelect={selectLeader}
+                handleEmptyLeaderSelect={pickNewLeader}
+                handleDraftTeamName={updateDraftTeamName}
+                handleSubmitTeam={submitTeam}
+                handleRestartTeam={restartTeam}
+                inputTeam={draftTeam}
+                inputLeader={draftLeader}
+            />
         </div>
     );
     

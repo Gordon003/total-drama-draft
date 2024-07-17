@@ -5,13 +5,15 @@ import mockDraftTeam from 'mocks/mockDraftTeam';
 interface DraftState {
     draftTeam: string[]
     draftLeader: string
+    draftTeamName: string
     DRAFTTIME: boolean
     cardIndex: number
     updateState: (newState: Partial<DraftState>) => void
 }
 
-const initialState: DraftState = {
+export const initialState: DraftState = {
     draftTeam: mockDraftTeam,
+    draftTeamName: "",
     draftLeader: '',
     DRAFTTIME: false,
     cardIndex: 0,

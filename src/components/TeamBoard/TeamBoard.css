@@ -18,7 +18,7 @@
     margin: 0 auto;
     grid-gap: 4%;
     width: 90%;
-    height: 80%;
+    height: 70%;
     text-align: center;
     box-sizing: border-box;
     background-color: rgb(131, 76, 14, 0.8);
@@ -41,4 +41,8 @@
 
 .team-board-table td {
     height: 100%;
+}
+
+.playerCard:hover {
+    box-shadow: 0 0 15px 5px rgb(179, 234, 14);
 }
