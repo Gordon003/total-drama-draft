@@ -45,8 +45,8 @@ const TeamBoard: React.FC<TeamBoardProps> = ({ handlePlayerSelect, handlePlayerE
     const CHECKTEAM = areAllStringsNonEmpty(inputTeam) && typeof leader != "undefined" && typeof handleSubmitTeam != "undefined"
 
     const handleRestartClick = () => {
-        if (typeof handleRestartClick != 'undefined') {
-            handleRestartClick();
+        if (typeof handleRestartTeam != 'undefined') {
+            handleRestartTeam();
         }
         setBtnText("SUBMIT TEAM");
     }
