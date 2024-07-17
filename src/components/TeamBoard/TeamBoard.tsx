@@ -111,7 +111,7 @@ const TeamBoard: React.FC<TeamBoardProps> = ({ handlePlayerSelect, handlePlayerE
 
                                 <div>
                                     {typeof handleRestartTeam != 'undefined' && <Button text="RESTART TEAM" onClick={handleRestartClick} />}
-                                    {CHECKTEAM && <Button text={btnText} onClick={handleSubmitClick}/> }
+                                    {/* {CHECKTEAM && <Button text={btnText} onClick={handleSubmitClick}/> } */}
                             </div>
                         </td>
                     </tr>
